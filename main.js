@@ -1,8 +1,8 @@
 "use strict"
 function renderCoffee(oneCoffee) {
-    let container = document.getElementById("coffee-objects");
-    let containerDiv = document.createElement("div");
-        containerDiv.setAttribute("class","coffee");
+    let container = document.getElementById("coffee-types");
+    // let containerDiv = document.createElement("div");
+    //     containerDiv.setAttribute("class","coffee");
     let coffeeId = document.createElement("div");
         coffeeId.setAttribute("class", "col-4");
     coffeeId.innerText = oneCoffee.id;
@@ -12,11 +12,32 @@ function renderCoffee(oneCoffee) {
     let coffeeRoast = document.createElement("div");
         coffeeRoast.setAttribute("class", "col-4");
     coffeeRoast.innerText = oneCoffee.roast;
-    containerDiv.appendChild(coffeeId);
-    containerDiv.appendChild(coffeeName);
-    containerDiv.appendChild(coffeeRoast);
-    container.appendChild(containerDiv);
+
+    container.appendChild(coffeeId);
+    container.appendChild(coffeeName);
+    container.appendChild(coffeeRoast);
+    // container.innerHTML = containerDiv.value;
 }
+
+// function renderCoffee(coffee) {
+//     console.log(coffee)
+//     var container = document.getElementById("coffee-types");
+//
+//     var coffeeId = document.createElement("div")
+//     coffeeId.setAttribute("class", "col-4 my-1")
+//     coffeeId.innerText = coffee.id;
+//
+//     var coffeeName = document.createElement("div")
+//     coffeeName.setAttribute("class", "col-4 my-1")
+//     coffeeName.innerText = coffee.name;
+//
+//     var coffeeRoast = document.createElement("div")
+//     coffeeRoast.setAttribute("class", "col-4 my-1")
+//     coffeeRoast.innerText = coffee.roast;
+
+
+
+
 
 function renderCoffees(coffees) {
     var html = '';
