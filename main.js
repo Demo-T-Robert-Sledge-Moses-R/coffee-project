@@ -2,14 +2,21 @@
 
 function renderCoffee(oneCoffee) {
     let container = document.getElementById("coffee-objects");
-    var html = document.createElement("div")
-        .setAttribute("class","coffee row");
-    html += '<div class="col-12">' + oneCoffee.id + '</div>';
-    html += '<div class="col-12">' + oneCoffee.name + '</div>';
-    html += '<div class="col-12">' + oneCoffee.roast + '</div>';
-    html += '</div>';
-
-    container.innerHTML = html;
+    let containerDiv = document.createElement("div");
+        containerDiv.setAttribute("class","coffee");
+    let coffeeId = document.createElement("div");
+        coffeeId.setAttribute("class", "col-4");
+    coffeeId.innerText = oneCoffee.id;
+    let coffeeName = document.createElement("div");
+        coffeeName.setAttribute("class", "col-4");
+    coffeeName.innerText = oneCoffee.name;
+    let coffeeRoast = document.createElement("div");
+        coffeeRoast.setAttribute("class", "col-4");
+    coffeeRoast.innerText = oneCoffee.roast;
+    containerDiv.appendChild(coffeeId);
+    containerDiv.appendChild(coffeeName);
+    containerDiv.appendChild(coffeeRoast);
+    container.appendChild(containerDiv);
 }
 
 function renderCoffees(coffees) {
