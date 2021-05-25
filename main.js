@@ -1,5 +1,4 @@
 "use strict"
-
 function renderCoffee(oneCoffee) {
     let container = document.getElementById("coffee-objects");
     let containerDiv = document.createElement("div");
