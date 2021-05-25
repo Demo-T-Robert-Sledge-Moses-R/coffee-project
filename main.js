@@ -1,8 +1,8 @@
 "use strict"
 function renderCoffee(oneCoffee) {
-    let container = document.getElementById("coffee-objects");
-    let containerDiv = document.createElement("div");
-        containerDiv.setAttribute("class","coffee");
+    let container = document.getElementById("coffee-types");
+    // let containerDiv = document.createElement("div");
+    //     containerDiv.setAttribute("class","coffee");
     let coffeeId = document.createElement("div");
         coffeeId.setAttribute("class", "col-4");
     coffeeId.innerText = oneCoffee.id;
@@ -12,34 +12,36 @@ function renderCoffee(oneCoffee) {
     let coffeeRoast = document.createElement("div");
         coffeeRoast.setAttribute("class", "col-4");
     coffeeRoast.innerText = oneCoffee.roast;
-    containerDiv.appendChild(coffeeId);
-    containerDiv.appendChild(coffeeName);
-    containerDiv.appendChild(coffeeRoast);
-    container.appendChild(containerDiv);
+    container.appendChild(coffeeId);
+    container.appendChild(coffeeName);
+    container.appendChild(coffeeRoast);
+    return container.innerHTML;
 }
 
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
+        html = renderCoffee(coffees[i]);
     }
     return html;
 }
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
+    tbody.innerHTML = "";
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffeesArr.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
+    console.log(filteredCoffees);
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+var coffeesArr = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -55,11 +57,10 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
-var tbody = document.querySelector('#coffees');
+var tbody = document.querySelector('#coffee-types');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees);
+tbody.innerHTML = renderCoffees(coffeesArr);
 
 submitButton.addEventListener('click', updateCoffees);
