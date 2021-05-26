@@ -40,11 +40,17 @@ body{
     background-color: rgba(0, 0, 0, .3);
     height: 400px;
     color: white;
+    width: auto;
     /*margin-right: 0;*/
 }
 
 .coffee-new{
     margin-top: 6em;
+}
+
+hr{
+    /*height: 1px;*/
+    background-color: white;
 }
 
 
