@@ -1,8 +1,6 @@
 "use strict"
 function renderCoffee(oneCoffee) {
     let container = document.getElementById("coffee-types");
-    // let containerDiv = document.createElement("div");
-    //     containerDiv.setAttribute("class","coffee");
     let coffeeId = document.createElement("div");
         coffeeId.setAttribute("class", "col-4");
     coffeeId.innerText = oneCoffee.id;
@@ -39,25 +37,30 @@ function renderCoffee(oneCoffee) {
 
 
 function renderCoffees(coffees) {
-    var html = '';
-    for(var i = 0; i <= coffees.length - 1; i--) {
-        html = renderCoffee(coffees[i]);
+    for(var i = 0; i <= coffees.length - 1; i++) {
+        tbody.innerHTML = renderCoffee(coffees[i]);
     }
-    return html;
+    return tbody.innerHTML;
 }
 
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
     tbody.innerHTML = "";
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffeesArr.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    console.log(filteredCoffees);
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    if(e.length){
+        tbody.innerHTML = renderCoffees(e);
+    } else {
+        e.preventDefault(); // don't submit the form, we just want to update the data
+
+        var selectedRoast = roastSelection.value;
+        var filteredCoffees = [];
+        coffeesArr.forEach(function (coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+                console.log(coffee.name.includes(searchBar.value));
+            }
+        });
+        console.log(filteredCoffees);
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -80,7 +83,15 @@ var coffeesArr = [
 var tbody = document.querySelector('#coffee-types');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var searchBar = document.querySelector('#coffee-select');
 
 tbody.innerHTML = renderCoffees(coffeesArr);
 
 submitButton.addEventListener('click', updateCoffees);
+searchBar.addEventListener("keyup", function (e){
+    let searchValue = e.target.value;
+    let filteredCoffees = coffeesArr.filter(coffee =>{
+        return coffee.name.toLowerCase().includes(searchValue.toLowerCase());
+        });
+    updateCoffees(filteredCoffees);
+})
