@@ -1,9 +1,55 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+.intro{
+    background-color: rgba(0, 0, 0, .3);
+    /*background-color: rgba(238, 246, 251, .3);*/
+}
+.title{
+    color: white;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+.nav-list{
+    color: white;
 }
+
+body{
+    background-image: url("https://wallpaperaccess.com/full/5041874.png");
+    /*height: 700px;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+}
+
+.coffee-search{
+    margin-top: 8em;
+    margin-bottom: 7em;
+    /*background-color: rgba(0, 0, 0, .3);*/
+
+}
+
+.coffee-list{
+    /*background-color: rgba(255, 255, 255, .4);*/
+    background-color: rgba(0, 0, 0, .3);
+    height: 400px;
+    color: white;
+
+    margin-bottom: 10em;
+
+    /*margin-left: 100px;*/
+    /*margin-right: 100px;*/
+}
+
+.second-form{
+    background-color: rgba(0, 0, 0, .3);
+    height: 400px;
+    color: white;
+    /*margin-right: 0;*/
+}
+
+.coffee-new{
+    margin-top: 6em;
+}
+
+
+
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/

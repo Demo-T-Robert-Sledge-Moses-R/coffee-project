@@ -10,31 +10,86 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Coffee!</h1>
-
-        <form>
-            <label for="roast-selection"></label>
-            <select id="roast-selection">
-                <option>all</option>
-                <option>light</option>
-                <option>medium</option>
-                <option>dark</option>
-            </select>
-            <label for="coffee-select"></label>
-            <input id="coffee-select" type="text">
-            <input id="submit" type="submit">
-        </form>
-        <div>
-            <div class="container" id="coffee-objects">
+        <header>
+            <div class="intro container-fluid">
                 <div class="row">
-                    <div class="col-4">ID</div>
-                    <div class="col-4">NAME</div>
-                    <div class="col-4">ROAST</div>
+                    <div class="col d-flex justify-content-start my-2">
+                        <h1 class="title">Coffee!</h1>
+                    </div>
+                    <div class="col d-flex justify-content-end align-items-center">
+                        <a class="mx-2 nav-list" href="#new-coffee">New Coffee</a>
+                        <p class="nav-list mt-3">|</p>
+                        <a class="mx-2 nav-list" href="#">Contact us</a>
+                        <p class="nav-list mt-3">|</p>
+                        <a class="mx-2 nav-list" href="#">Review</a>
+                    </div>
                 </div>
+            </div>
+        </header>
 
-               <div class="row coffees" id="coffee-types"></div>
+        <div class="container">
+            <div class="coffee-search d-flex justify-content-center">
+                <form class="form-inline">
+                    <label for="roast-selection"></label>
+                    <select class="form-control" id="roast-selection">
+                        <option>all</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <label for="coffee-select"></label>
+                    <input id="coffee-select" type="text" class="form-control" placeholder="Find your Coffee">
+                    <input id="submit" type="submit" class="btn btn-dark">
+                </form>
+            </div>
+
+            <div class="container coffee-list d-flex justify-content-center align-items-center">
+                <div class="" id="coffee-objects">
+                    <div class="row">
+                        <div class="col-4">ID</div>
+                        <div class="col-4">NAME</div>
+                        <div class="col-4">ROAST</div>
+                    </div>
+
+                   <div class="row coffees" id="coffee-types"></div>
+                </div>
             </div>
         </div>
+
+        <div class="second-form container-fluid row d-flex">
+            <div class="col-8">
+                <h1 class="my-5">Don't see your coffee?</h1>
+
+                <p class="my-5">Don't see your coffee, let us know! we are looking to please our customers, by filling out the form and submitting your coffee
+                    name and roast we can assure you that your new coffee will be on our menu for you to enjoy!</p>
+
+                <h2 class="my-5 d-flex justify-content-end">Add a new coffee here!</h2>
+
+
+            </div>
+            <form class="col-4">
+                <a name="new-coffee"></a>
+                <div class="form-group coffee-new">
+                    <label for="new-roast">Roast</label>
+                    <select class="form-control" id="new-roast">
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new-name">Coffee Name</label>
+                    <input type="text" class="form-control" id="new-name">
+                    <input type="submit" id="new-submit" value="Add my Coffee" class="btn btn-dark mt-3">
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"
                 integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
                 crossorigin="anonymous"></script>
