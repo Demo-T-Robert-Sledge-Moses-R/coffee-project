@@ -2,18 +2,32 @@
     background-color: rgba(0, 0, 0, .3);
     /*background-color: rgba(238, 246, 251, .3);*/
 }
-.title{
+
+
+.coffee-title{
     color: white;
+}
+.coffee-title:hover{
+    color: black;
+    text-decoration: none;
 }
 
 .nav-list{
     color: white;
+    font-family: 'Indie Flower', cursive;
+    /*font-family: 'Caveat', cursive;*/
+    font-size: 17px;
+}
+
+.nav-list:hover{
+    color: black;
 }
 
 body{
     background-image: url("https://wallpaperaccess.com/full/5041874.png");
-    /*height: 700px;*/
-    /*background-repeat: no-repeat;*/
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -29,6 +43,12 @@ body{
     background-color: rgba(0, 0, 0, .3);
     /*height: auto;*/
     color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    box-shadow: -10px 0px 7px 0 rgba(0,0,0,0.6), 10px 0px 7px 0 rgba(0,0,0,0.6);
+
+
 
     margin-bottom: 10em;
 
@@ -53,9 +73,27 @@ hr{
     background-color: white;
 }
 
+p{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+h1, h2{
+    font-family: 'Caveat', cursive;
+}
+
+.review{
+    color: white;
+    background-color: rgba(0, 0, 0, .3);
+    margin-top: 8em;
+}
 
 
-/*td, th {*/
-/*    border: 1px solid black;*/
-/*    padding: 5px 10px;*/
-/*}*/
+@media screen and (max-width: 650px){
+
+}
+
+
+
+
