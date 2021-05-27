@@ -1,8 +1,11 @@
 "use strict"
+// addButtonEvent();
+
+
 function renderCoffee(oneCoffee) {
     let container = document.getElementById("coffee-types");
     let coffeeId = document.createElement("div");
-        coffeeId.setAttribute("class", "col-4");
+        coffeeId.setAttribute("class", "col-4 my-1");
     coffeeId.innerText = oneCoffee.id;
     let coffeeName = document.createElement("div");
         coffeeName.setAttribute("class", "col-4");
@@ -15,6 +18,8 @@ function renderCoffee(oneCoffee) {
     container.appendChild(coffeeRoast);
     return container.innerHTML;
 }
+
+
 
 // function renderCoffee(coffee) {
 //     console.log(coffee)
@@ -119,3 +124,24 @@ searchBar.addEventListener("keyup", function (e){
         });
     updateCoffees(filteredCoffees);
 })
+
+
+
+function addButtonEvent() {
+    document.getElementById("submitBtn")
+        .addEventListener("click", addPost)
+}
+
+function addPost() {
+    var blogPost = document.getElementById("blog-container");
+    var newPara = document.createElement("p");
+    newPara.setAttribute("class", "");
+    var loc = document.getElementById("user-input");
+    // var today = new Date();
+    //
+    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    blogPost.appendChild(newPara);
+    newPara.innerText = loc.value;
+    loc.value = '';
+}

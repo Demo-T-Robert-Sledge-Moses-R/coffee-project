@@ -8,20 +8,24 @@
               integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
               crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="intro container-fluid">
                 <div class="row">
                     <div class="col d-flex justify-content-start my-2">
-                        <h1 class="title">Anteiku Coffee!</h1>
+                        <h1 class="title"><a class="coffee-title" href="index.html">Anteiku Coffee!</a></h1>
                     </div>
                     <div class="col d-flex justify-content-end align-items-center">
                         <a class="mx-2 nav-list" href="#new-coffee">New Coffee</a>
                         <p class="nav-list mt-3">|</p>
-                        <a class="mx-2 nav-list" href="#">Contact us</a>
+                        <a class="mx-2 nav-list" href="review.html">Contact us</a>
                         <p class="nav-list mt-3">|</p>
-                        <a class="mx-2 nav-list" href="#">Review</a>
+                        <a class="mx-2 nav-list" href="review.html">Review</a>
                     </div>
                 </div>
             </div>
@@ -45,14 +49,16 @@
 
             <div class="container coffee-list d-flex justify-content-center align-items-center">
                 <div class="" id="coffee-objects">
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-4">ID</div>
                         <div class="col-4">NAME</div>
                         <div class="col-4">ROAST</div>
 
                     </div>
                     <hr>
-                   <div class="row coffees" id="coffee-types"></div>
+                   <div class="row coffees" id="coffee-types">
+
+                   </div>
                 </div>
             </div>
         </div>
@@ -65,8 +71,6 @@
                     name and roast we can assure you that your new coffee will be on our menu for you to enjoy!</p>
 
                 <h2 class="my-5 d-flex justify-content-end">Add a new coffee here!</h2>
-
-
             </div>
             <form class="col-4">
                 <a name="new-coffee"></a>
